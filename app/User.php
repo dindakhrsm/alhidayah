@@ -2,21 +2,19 @@
 
 namespace App;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
-    use Notifiable;
-
+    use HasRoles;
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'username' ,'email', 'password',
     ];
 
     /**
@@ -28,12 +26,39 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+    public function posts()
+    {
+        //satu user bisa memiliki banyak post;
+        return $this->hasMany(Post::class, 'author_id');
+    }
+
+    public function profil()
+    {
+        //satu user bisa memiliki banyak post;
+        return $this->hasMany(Profil::class, 'author_id');
+    }
+
+    public function images()
+    {
+        //satu user bisa memiliki banyak post;
+        return $this->hasMany(Image::class, 'author_id');
+    }
+
+    public function jadwaljumats()
+    {
+        //satu user bisa memiliki banyak post;
+        return $this->hasMany(Jadwaljumat::class, 'author_id');
+    }
+
+    public function jadwalkajians()
+    {
+        //satu user bisa memiliki banyak post;
+        return $this->hasMany(Jadwalkajian::class, 'author_id');
+    }
+
+    public function videos()
+    {
+        //satu user bisa memiliki banyak post;
+        return $this->hasMany(Video::class, 'author_id');
+    }
 }

@@ -1,0 +1,41 @@
+.login-style {
+
+    background: #fcfcfc  url("../img/islamic-background.png");
+}
+
+.form-group.excerpt .CodeMirror {
+    height : 100px;
+    min-height : 100px;
+}
+
+#header-color {
+    background: cadetblue;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.8);
+    padding: 5px;
+}
+
+.active-hover {
+    background : yellowgreen;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.8);
+    border: 1px dashed grey;
+}
+
+.widget-shadow {
+    box-shadow: 3px 3px 3px 3px;
+    padding: 1px;
+}
+
+.post-shadow {
+    box-shadow: 3px 3px 3px 3px;
+    padding: 2px;
+}
+
+.widget-custom {
+    background: cadetblue;
+}
+
+#sidebar-style{
+    background:cadetblue;
+}
+
+
